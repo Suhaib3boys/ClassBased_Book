@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block list %}
+<section class="service-section pt-5 pb-5 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class=" text-uppercase pb-4 font-weight-bold custom-font-h3">BOOKS</h3>
+      </div>
+      {% for i in book %}
+      <div class="col-lg-4 col-md-6">
+        <div class="service-box" style="width: 100%">
+          <a href="{% url 'detail' i.id %}" style="text-decoration: none; color: black;">
+          <img src="{{i.Image.url}}" class="img-fluid">
+          <h4 class="font-weight-bold pt-4 pb-4">{{i.Book_name}}</h4></a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+  </div>
+</section>
+
+{% for i in book %}
+
+{% endfor %}
+{% endblock%}

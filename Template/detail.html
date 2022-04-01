@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block list %}
+<div class="container">
+<div class="card mb-3 pt-4" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{detail.Image.url}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{detail.Book_name}}</h5>
+          <h6 class="card-text">Auther : {{detail.Writer}}</h6> 
+          <p class="card-text">Published : {{detail.Publish_year}}</p>
+          <p class="card-text">{{detail.Book_description}}</p>
+          <a href="{% url 'update' detail.pk %}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Update</a>
+          <a href="{% url 'delete-book' detail.pk %}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+{% endblock%}
